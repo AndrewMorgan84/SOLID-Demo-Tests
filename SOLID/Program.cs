@@ -1,15 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SOLID.SRP;
 
 namespace SOLID
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            //SRP Test
+
+            var s = new CalculateSalary() {DailyRate = 1000, Daysworked = 20};
+            var salary = s.CalcaulateSalary();
+            var p = new PrintSalary();
+            p._PrintSalary(salary);
+            Console.ReadKey(true);
         }
     }
 }
